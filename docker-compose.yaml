@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  postgres_lykoi:
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    env_file:
+      - ".envs-local/.lykoi_db"
+    volumes:
+      - ~/local_postgres/lykoi_volume/:/var/lib/postgresql/data/
+volumes:
+  lykoi_db:
